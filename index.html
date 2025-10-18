@@ -1,0 +1,300 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>My Heartfelt Apology</title>  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>  
+    <script src="https://unpkg.com/feather-icons"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>  
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">  
+    <style>  
+        body {  
+            font-family: 'Nunito', sans-serif;  
+            overflow-x: hidden;  
+        }  
+        .page {  
+            position: fixed;  
+            top: 0;  
+            left: 0;  
+            width: 100%;  
+            height: 100%;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            transition: all 1s ease;  
+            z-index: 1;  
+            opacity: 0;  
+            pointer-events: none;  
+            padding: 20px;  
+            box-sizing: border-box;  
+        }  
+        .page.active {  
+            opacity: 1;  
+            pointer-events: all;  
+            z-index: 2;  
+        }  
+        .hello-kitty {  
+            position: absolute;  
+            transition: all 8s ease-in-out;  
+            animation: float 6s ease-in-out infinite;  
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));  
+        }  
+        @keyframes float {  
+            0%, 100% { transform: translateY(0) rotate(0deg); }  
+            50% { transform: translateY(-20px) rotate(2deg); }  
+        }  
+        .envelope {  
+            position: relative;  
+            width: 200px;  
+            height: 120px;  
+            background-color: #f9a8d4;  
+            border-radius: 5px;  
+            box-shadow: 0 4px 20px rgba(249, 168, 212, 0.5);  
+            cursor: pointer;  
+            transition: all 0.3s ease;  
+            transform-origin: top center;  
+            overflow: hidden;  
+        }  
+        .envelope:hover {  
+            transform: scale(1.05);  
+        }  
+        .envelope:before {  
+            content: '';  
+            position: absolute;  
+            top: 0;  
+            width: 0;  
+            height: 0;  
+            border-left: 100px solid transparent;  
+            border-right: 100px solid transparent;  
+            border-top: 70px solid #f687b3;  
+            transform-origin: top;  
+            transition: all 0.5s ease;  
+            z-index: 2;  
+        }  
+        .envelope.open:before {  
+            transform: rotateX(180deg);  
+        }  
+        .paper {  
+            position: absolute;  
+            width: 180px;  
+            height: 100px;  
+            background-color: white;  
+            top: 60px; /* Start inside the envelope */  
+            left: 10px;  
+            border-radius: 3px;  
+            display: flex;  
+            flex-direction: column;  
+            align-items: center;  
+            justify-content: center;  
+            transition: all 0.5s ease;  
+            overflow: hidden;  
+            z-index: 1;  
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);  
+        }  
+        .heart-btn {  
+            background: linear-gradient(45deg, #f472b6, #ec4899);  
+            border: none;  
+            color: white;  
+            padding: 12px 24px;  
+            border-radius: 50px;  
+            font-size: 18px;  
+            cursor: pointer;  
+            transition: all 0.3s ease;  
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);  
+            display: flex;  
+            align-items: center;  
+            gap: 8px;  
+            margin-top: 20px;  
+        }  
+        .heart-btn:hover {  
+            transform: scale(1.05);  
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);  
+        }  
+        .blur-bg {  
+            backdrop-filter: blur(4px);  
+            background-color: rgba(255, 255, 255, 0.3);  
+            padding: 30px;  
+            border-radius: 20px;  
+            max-width: 600px;  
+        }  
+        .accept-btn {  
+            background: linear-gradient(45deg, #f472b6, #ec4899);  
+            border: none;  
+            color: white;  
+            padding: 12px 24px;  
+            border-radius: 50px;  
+            font-size: 18px;  
+            cursor: pointer;  
+            transition: all 0.3s ease;  
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);  
+            margin-top: 30px;  
+        }  
+        .accept-btn:hover {  
+            transform: scale(1.05);  
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);  
+        }  
+    </style>  
+</head>  
+<body class="overflow-hidden">  
+    <!-- Page 1 - Landing -->  
+    <div class="page active bg-pink-200" id="page1">  
+        <!-- Hello Kitty elements -->  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-24" style="top: 15%; left: 10%;">  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-16" style="top: 70%; left: 80%;">  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-20" style="top: 30%; left: 70%;">  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-12" style="top: 80%; left: 20%;">  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-32" style="top: 60%; left: 40%;">  
+        <div class="flex flex-col items-center justify-center h-full">  
+            <div class="envelope" id="envelope">  
+                <div class="paper" id="paper">  
+                    <h2 class="text-2xl font-bold text-pink-600 mb-2">Sorry</h2>  
+                    <p class="text-xs text-gray-600">(click to accept the apology)</p>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+
+    <!-- Page 2 -->  
+    <div class="page bg-cover bg-center" id="page2" style="background-image: url('https://i.ibb.co/ZRdwP2Dh/IMG-20251018-090008-104.jpg');">  
+        <div class="blur-bg text-center">  
+            <p class="text-lg md:text-xl text-rose-800 mb-6">  
+                I hope my this gift made you a little bit happy :) made you smile, I hope it does 😭🫶 well I don't wanna disturb you much, just if you're willing to accept my apology and ready to read what I have realised, just click on this down button  
+            </p>  
+            <button class="heart-btn" id="page2-btn">  
+                <span>🫶💘</span>  
+            </button>  
+        </div>  
+    </div>  
+
+    <!-- Page 3 -->  
+    <div class="page bg-cover bg-center" id="page3" style="background-image: url('https://i.ibb.co/20p22WSC/IMG-20251018-090935-260.jpg');">  
+        <div class="blur-bg text-center">  
+            <p class="text-lg md-text-xl text-pink-600 mb-6">  
+                well manya, I hope you're doing good, agh well for me it's not working out! I am missing you badly! I have realised my mistakes, when you needed me the most i wasn't there, ditched you abused you and even so many arguments :( I lost your value by time and didn't cared about you, but now I am feeling so embarassed and guilty for what I have done! 😭 Please manya I know being in relationship that himanshi and ruchi stuff was genuinely so wrong! I understood the things I even told ruchi evrything and said no to her! And himanshi thing is over too, even I will block them too if you want! Just come back manya it's so heavy the guilt, and loosing you making me cry everyday 😭🙏 please just come back! Come back!  
+            </p>  
+            <button class="accept-btn" id="page3-btn">  
+                Accept Apology  
+            </button>  
+        </div>  
+    </div>  
+
+    <!-- Page 4 -->  
+    <div class="page bg-pink-200" id="page4">  
+        <!-- Hello Kitty elements -->  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-24" style="top: 20%; left: 15%;">  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-16" style="top: 75%; left: 85%;">  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-20" style="top: 35%; left: 75%;">  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-12" style="top: 85%; left: 25%;">  
+        <img src="https://i.ibb.co/2734D0fT/d8d65022741de05193ad57f85d74b968-removebg-preview.png" class="hello-kitty w-32" style="top: 65%; left: 45%;">  
+
+        <div class="flex flex-col items-center justify-center h-full px-4">  
+            <div class="bg-white bg-opacity-80 rounded-xl p-6 max-w-xl text-center">  
+                <p class="text-lg md:text-xl text-pink-600">  
+                    Well, I don't wanna bother or disturb you more... In just case if you're willing to forgive me and coming back, maybe not now but later after your boards exam... Just drop me a 🫶💘 this emoji msg on telegram, and I will be waiting for you until you're coming back already:D 🥹 just come back I am missing you so much! If you made it this far I will be waiting for your response on telegram!, everyone deserves a second chance, me too I guess...  
+                </p>  
+            </div>  
+        </div>  
+    </div>  
+
+    <script>  
+        document.addEventListener('DOMContentLoaded', () => {  
+            // Animate Hello Kitty elements randomly  
+            const kitties = document.querySelectorAll('.hello-kitty');  
+            kitties.forEach(kitty => {  
+                const duration = 6 + Math.random() * 6;  
+                const delay = Math.random() * 5;  
+                kitty.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;  
+                  
+                // Random initial rotation  
+                const rotate = (Math.random() * 10) - 5;  
+                kitty.style.transform = `rotate(${rotate}deg)`;  
+            });  
+
+            // Page 1 interactions  
+            const envelope = document.getElementById('envelope');  
+            const paper = document.getElementById('paper');  
+            let envelopeOpened = false;  
+
+            envelope.addEventListener('click', () => {  
+                if (!envelopeOpened) {  
+                    // First click - open envelope and slide paper up a bit
+                    envelope.classList.add('open');  
+                    gsap.to(paper, {   
+                        y: -30,   
+                        duration: 0.5,  
+                        onComplete: () => {  
+                            envelopeOpened = true;  
+                        }  
+                    });  
+                } else {  
+                    // Second click - paper flies out and go to next page
+                    gsap.to(paper, {   
+                        y: -200,   
+                        opacity: 0,  
+                        duration: 0.8,  
+                        onComplete: () => {  
+                            transitionToPage('page2');  
+                        }  
+                    });  
+                }  
+            });  
+
+            // Page 2 interactions  
+            document.getElementById('page2-btn').addEventListener('click', () => {  
+                transitionToPage('page3');  
+            });  
+
+            // Page 3 interactions  
+            document.getElementById('page3-btn').addEventListener('click', () => {  
+                transitionToPage('page4');  
+            });  
+
+            // Page transition function  
+            function transitionToPage(targetPageId) {  
+                const currentPage = document.querySelector('.page.active');  
+                const targetPage = document.getElementById(targetPageId);  
+
+                gsap.to(currentPage, {  
+                    opacity: 0,  
+                    duration: 0.8,  
+                    onComplete: () => {  
+                        currentPage.classList.remove('active');  
+                        gsap.fromTo(targetPage,   
+                            { opacity: 0 },   
+                            {   
+                                opacity: 1,   
+                                duration: 0.8,  
+                                onComplete: () => {  
+                                    targetPage.classList.add('active');  
+                                }  
+                            }  
+                        );  
+                    }  
+                });  
+            }  
+
+            // Random movement for Hello Kitty elements  
+            function randomMoveKitties() {  
+                kitties.forEach(kitty => {  
+                    const newX = Math.random() * 80 + 10;  
+                    const newY = Math.random() * 80 + 10;  
+                    gsap.to(kitty, {  
+                        left: `${newX}%`,  
+                        top: `${newY}%`,  
+                        duration: 20 + Math.random() * 20,  
+                        ease: "sine.inOut",  
+                        onComplete: randomMoveKitties  
+                    });  
+                });  
+            }  
+
+            // Start random movement  
+            setTimeout(randomMoveKitties, 2000);  
+        });  
+
+        feather.replace();  
+    </script>  
+</body>  
+</html>
