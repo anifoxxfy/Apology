@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome</title>
+  <title>Last Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
       font-family: 'Poppins', sans-serif;
       position: relative;
       overflow: hidden;
@@ -28,27 +30,28 @@
       z-index: -1;
     }
 
-    button {
-      padding: 14px 28px;
-      background-color: #ffb6c1;
-      color: #000;
-      font-size: 18px;
-      font-weight: 600;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      box-shadow: 0 0 15px rgba(255, 182, 193, 0.7);
+    img {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.7);
+      margin-bottom: 20px;
     }
 
-    button:hover {
-      background-color: #ff69b4;
-      color: #fff;
-      transform: scale(1.1);
+    p {
+      color: #ff69b4;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      max-width: 80%;
+      text-shadow: 0 0 10px rgba(0,0,0,0.6);
     }
   </style>
 </head>
 <body>
-  <button onclick="location.href='page2.html'">Click</button>
+  <img src="https://i.ibb.co/KjBj2b99/d7fe21381791297043e1f7200db367fc.jpg" alt="Final Image">
+  <p>
+    I am waiting on telegram with this matching pfp, if you will be ready then match the pfp, 
+    I will wait — this is just a gift cause we haven't changed our pfp from a long time.
+  </p>
 </body>
 </html>

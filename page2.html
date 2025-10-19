@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PFP Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      overflow-y: auto;
+      padding: 20px 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/99Zx3m3j/In-Shot-20251019-191242317.jpg') center/cover no-repeat;
+      filter: blur(6px) brightness(0.8);
+      z-index: -1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .grid img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .grid img:hover {
+      transform: scale(1.05);
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 14px 28px;
+      background-color: #ffb6c1;
+      color: #000;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.7);
+    }
+
+    button:hover {
+      background-color: #ff69b4;
+      color: #fff;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <img src="https://i.ibb.co/ynfQbzB9/IMG-20251019-185939-956.jpg" alt="">
+    <img src="https://i.ibb.co/HffBJ273/IMG-20251019-185939-836.jpg" alt="">
+    <img src="https://i.ibb.co/hFYz7Tww/IMG-20251019-190134-034.jpg" alt="">
+    <img src="https://i.ibb.co/jkzSvykm/IMG-20251019-190134-016.jpg" alt="">
+    <img src="https://i.ibb.co/7JtkPft2/IMG-20251019-190140-921.jpg" alt="">
+    <img src="https://i.ibb.co/qYr6XXgx/IMG-20251019-190140-486.jpg" alt="">
+    <img src="https://i.ibb.co/Tx15b1LB/IMG-20251019-190146-137.jpg" alt="">
+    <img src="https://i.ibb.co/bgNkbc22/IMG-20251019-190146-581.jpg" alt="">
+    <img src="https://i.ibb.co/SwnK4kmj/IMG-20251019-190331.jpg" alt="">
+    <img src="https://i.ibb.co/qYp9Ngbv/IMG-20251019-190315.jpg" alt="">
+  </div>
+
+  <button onclick="location.href='page3.html'">Click →</button>
+</body>
+</html>
